@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------
+BACKEND:
+
+Entrar no ambiente virtual: .\venv\Scripts\Activate
+
+rodar o backend localmente: python wsgi.py
+
+Execução docker:
+
+docker build -t task-manager-backend .
+docker run -p 5000:5000 task-manager-backend
+
+---------------------------------------------------------------------------
+FRONTEND:
+
+Execução docker:
+
+docker build -t task-manager-frontend .
+docker run -p 3000:3000 task-manager-frontend
+
+---------------------------------------------------------------------------
+POSTMAN:
+
+Para listar tarefas: 
+    GET: http://localhost:5000/tasks
+
+Para criar uma tarefa: 
+    POST: http://localhost:5000/tasks
+        1-Body:
+            1.1: raw - JSON
+
+                {
+                    "id": 1,
+                    "name": "Tarefa Exemplo",
+                    "deadline": "2024-09-25",
+                    "completed": false
+                }
